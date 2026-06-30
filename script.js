@@ -134,4 +134,4 @@ document.getElementById("cityInput").addEventListener("keypress", function (e) {
     if (e.key === "Enter") {}
         getWeather();
  
- });
+ });let timer;
