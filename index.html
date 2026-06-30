@@ -1,105 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Weather App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weatherly</title>
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="sunny">
 
+<div class="background-overlay"></div>
+
 <div class="container">
 
-    <div class="card login-card" id="loginCard">
+<div class="weather-card">
 
-        <h2>Weather Dashboard</h2>
+<div class="top-bar">
 
-        <input type="text" id="username" placeholder="Username">
+<div>
 
-        <input type="password" id="password" placeholder="Password">
+<p class="today">Today</p>
 
-        <button onclick="login()">Login</button>
+<h1 id="city">Lagos</h1>
 
-        <p id="loginError"></p>
+<p id="date">Monday, 30 June</p>
 
-    </div>
+</div>
 
-    <div class="card weather-card hidden" id="weatherCard">
+<button id="locationBtn" class="location-btn">
 
-        <div class="top">
+<i class="fa-solid fa-location-crosshairs"></i>
 
-            <h2 id="city">Lagos</h2>
+</button>
 
-            <button onclick="logout()">Logout</button>
+</div>
 
-        </div>
+<div class="main-weather">
 
-        <div class="search">
+<div class="weather-icon">
 
-            <input
-                type="text"
-                id="cityInput"
-                placeholder="Search any city">
+<i id="weatherIcon" class="fa-solid fa-sun"></i>
 
-            <button onclick="getWeather()">
+</div>
 
-                <i class="fa fa-search"></i>
+<div class="temperature">
 
-            </button>
+<h2 id="temperature">28°</h2>
 
-        </div>
+<p id="condition">Sunny</p>
 
-        <div class="icon">
+<p class="high-low">
 
-            <i id="weatherIcon"
-            class="fa-solid fa-sun"></i>
+H:
+<span id="tempMax">31°</span>
 
-        </div>
+&nbsp;&nbsp;
 
-        <h1 id="temperature">--°C</h1>
+L:
+<span id="tempMin">24°</span>
 
-        <h3 id="condition">Search a city</h3>
+</p>
 
-        <div class="details">
+</div>
 
-            <div>
+</div>
 
-                <h2 id="humidity">--%</h2>
+<div class="search-box">
 
-                <p>Humidity</p>
+<input
+type="text"
+id="cityInput"
+placeholder="Search any city...">
 
-            </div>
+<button id="searchBtn">
 
-            <div>
+<i class="fa-solid fa-magnifying-glass"></i>
 
-                <h2 id="wind">-- km/h</h2>
+</button>
 
-                <p>Wind</p>
+</div>
 
-            </div>
+<p id="errorMessage"></p>
 
-            <div>
+<div class="weather-grid">
 
-                <h2 id="feels">--°C</h2>
+<div class="info-card">
 
-                <p>Feels Like</p>
+<i class="fa-solid fa-temperature-half"></i>
 
-            </div>
+<h4>Feels Like</h4>
 
-        </div>
+<p id="feels">--°</p>
 
-    </div>
+</div>
+
+<div class="info-card">
+
+<i class="fa-solid fa-droplet"></i>
+
+<h4>Humidity</h4>
+
+<p id="humidity">--%</p>
+
+</div>
+
+<div class="info-card">
+
+<i class="fa-solid fa-wind"></i>
+
+<h4>Wind</h4>
+
+<p id="wind">-- km/h</p>
+
+</div>
+
+<div class="info-card">
+
+<i class="fa-solid fa-eye"></i>
+
+<h4>Visibility</h4>
+
+<p id="visibility">-- km</p>
+
+</div>
+
+<div class="info-card">
+
+<i class="fa-solid fa-sun"></i>
+
+<h4>Sunrise</h4>
+
+<p id="sunrise">--:--</p>
+
+</div>
+
+<div class="info-card">
+
+<i class="fa-solid fa-moon"></i>
+
+<h4>Sunset</h4>
+
+<p id="sunset">--:--</p>
+
+</div>
+
+</div>
+
+<div class="forecast-section">
+
+<h3>
+
+<i class="fa-solid fa-clock"></i>
+
+Hourly Forecast
+
+</h3>
+
+<div id="hourlyForecast" class="forecast-row">
+
+<!-- JavaScript -->
+
+</div>
+
+</div>
+
+<div class="forecast-section">
+
+<h3>
+
+<i class="fa-solid fa-calendar-days"></i>
+
+5-Day Forecast
+
+</h3>
+
+<div id="dailyForecast" class="daily-list">
+
+<!-- JavaScript -->
+
+</div>
+
+</div>
+
+<div id="loader" class="loader hidden">
+
+<div class="spinner"></div>
+
+<p>Loading weather...</p>
+
+</div>
+
+</div>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
-</html><p id="date"></p><div class="temp-range">
-    <span id="tempMax"></span>
-    <span id="tempMin"></span> 
+</html>

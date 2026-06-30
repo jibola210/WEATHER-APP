@@ -151,26 +151,143 @@ button:hover{
 }
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
-
-  .weather-card {
-    width: 90%;
-    max-width: 400px;
-    padding: 20px;
   }
+}/* ===========================
+   MODERN IMPROVEMENTS
+=========================== */
 
-  input {
-    width: 100%;
-    font-size: 16px;
-  }
+body{
+    font-family: 'Poppins', sans-serif;
+    min-height:100vh;
+    padding:20px;
+    overflow:auto;
+}
 
-  button {
-    width: 100%;
-    margin-top: 10px;
-    font-size: 16px;
-  }
+.card{
+    animation:fadeIn .6s ease;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    backdrop-filter:blur(20px);
+}
 
-  .weather-details {
-    flex-direction: column;
-    align-items: center;
-  }
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.search{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.search input{
+    flex:1;
+    border-radius:30px;
+    padding:15px 20px;
+    border:none;
+}
+
+.search button{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+}
+
+.search button:hover{
+    transform:scale(1.08);
+}
+
+#temperature{
+    font-size:75px;
+    font-weight:700;
+}
+
+#condition{
+    opacity:.9;
+    margin-top:10px;
+}
+
+.details{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.details div{
+    background:rgba(255,255,255,.15);
+    border-radius:18px;
+    padding:20px;
+    transition:.3s;
+}
+
+.details div:hover{
+    transform:translateY(-6px);
+    background:rgba(255,255,255,.22);
+}
+
+.icon{
+    font-size:90px;
+    margin:20px 0;
+}
+
+button{
+    transition:.3s;
+}
+
+button:hover{
+    background:#f1f1f1;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.card{
+    padding:22px;
+    border-radius:25px;
+}
+
+.top{
+    flex-direction:column;
+    gap:15px;
+}
+
+.search{
+    flex-direction:column;
+}
+
+.search input{
+    width:100%;
+}
+
+.search button{
+    width:100%;
+    border-radius:15px;
+    height:50px;
+}
+
+.details{
+    grid-template-columns:1fr;
+}
+
+#temperature{
+    font-size:60px;
+}
+
+.icon{
+    font-size:70px;
+}
+
 }
