@@ -1,0 +1,151 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.5s;
+    overflow:hidden;
+}
+
+.sunny{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+}
+
+.cloudy{
+    background:linear-gradient(135deg,#757f9a,#d7dde8);
+}
+
+.rain{
+    background:linear-gradient(135deg,#2c3e50,#4ca1af);
+}
+
+.snow{
+    background:linear-gradient(135deg,#d7d2cc,#304352);
+}
+
+.clear{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+}
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    max-width:420px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(25px);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:25px;
+    padding:30px;
+    color:#fff;
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.hidden{
+    display:none;
+}
+
+h2,h3,h1{
+    text-align:center;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin:12px 0;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    font-size:16px;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    padding:14px;
+    font-size:16px;
+    background:#ffffff;
+    color:#333;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.top button{
+    width:auto;
+    padding:10px 15px;
+}
+
+.search{
+    display:flex;
+    margin:25px 0;
+}
+
+.search input{
+    flex:1;
+    margin-right:10px;
+}
+
+.search button{
+    width:60px;
+}
+
+.icon{
+    font-size:80px;
+    text-align:center;
+    margin:25px 0;
+}
+
+#temperature{
+    font-size:65px;
+}
+
+#condition{
+    margin-bottom:25px;
+}
+
+.details{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.details div{
+    background:rgba(255,255,255,.12);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.details h2{
+    font-size:22px;
+    margin-bottom:6px;
+}
+
+#loginError{
+    color:#ffb3b3;
+    text-align:center;
+    margin-top:10px;
+}
