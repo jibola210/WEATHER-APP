@@ -5,13 +5,17 @@
     font-family:'Segoe UI',sans-serif;
 }
 
+/* Backgrounds */
+
 body{
-    height:100vh;
+    min-height:100vh;
     display:flex;
-    justify-content:center;
-    align-items:center;
+    justify-content:flex-start;
+    align-items:flex-start;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:20px;
     transition:.5s;
-    overflow:hidden;
 }
 
 .sunny{
@@ -34,139 +38,32 @@ body{
     background:linear-gradient(135deg,#4facfe,#00f2fe);
 }
 
+/* Layout */
+
 .container{
     width:100%;
     display:flex;
     justify-content:center;
-    padding:20px;
+    align-items:flex-start;
+    padding:20px 0;
 }
 
 .card{
     width:100%;
     max-width:420px;
     background:rgba(255,255,255,.18);
-    backdrop-filter:blur(25px);
+    backdrop-filter:blur(20px);
     border:1px solid rgba(255,255,255,.2);
     border-radius:25px;
     padding:30px;
     color:#fff;
-    box-shadow:0 20px 40px rgba(0,0,0,.2);
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    animation:fadeIn .6s ease;
+    margin-bottom:30px;
 }
 
 .hidden{
     display:none;
-}
-
-h2,h3,h1{
-    text-align:center;
-}
-
-input{
-    width:100%;
-    padding:14px;
-    margin:12px 0;
-    border:none;
-    outline:none;
-    border-radius:12px;
-    font-size:16px;
-}
-
-button{
-    cursor:pointer;
-    border:none;
-    outline:none;
-    border-radius:12px;
-    padding:14px;
-    font-size:16px;
-    background:#ffffff;
-    color:#333;
-    transition:.3s;
-}
-
-button:hover{
-    transform:scale(1.03);
-}
-
-.top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.top button{
-    width:auto;
-    padding:10px 15px;
-}
-
-.search{
-    display:flex;
-    margin:25px 0;
-}
-
-.search input{
-    flex:1;
-    margin-right:10px;
-}
-
-.search button{
-    width:60px;
-}
-
-.icon{
-    font-size:80px;
-    text-align:center;
-    margin:25px 0;
-}
-
-#temperature{
-    font-size:65px;
-}
-
-#condition{
-    margin-bottom:25px;
-}
-
-.details{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.details div{
-    background:rgba(255,255,255,.12);
-    padding:18px;
-    border-radius:15px;
-    text-align:center;
-}
-
-.details h2{
-    font-size:22px;
-    margin-bottom:6px;
-}
-
-#loginError{
-    color:#ffb3b3;
-    text-align:center;
-    margin-top:10px;
-}
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
-  }
-}/* ===========================
-   MODERN IMPROVEMENTS
-=========================== */
-
-body{
-    font-family: 'Poppins', sans-serif;
-    min-height:100vh;
-    padding:20px;
-    overflow:auto;
-}
-
-.card{
-    animation:fadeIn .6s ease;
-    box-shadow:0 15px 40px rgba(0,0,0,.25);
-    backdrop-filter:blur(20px);
 }
 
 @keyframes fadeIn{
@@ -180,43 +77,96 @@ body{
     }
 }
 
+/* Text */
+
+h1,h2,h3{
+    text-align:center;
+}
+
+#temperature{
+    font-size:72px;
+    font-weight:bold;
+}
+
+#condition{
+    margin:12px 0 25px;
+    opacity:.9;
+}
+
+/* Inputs */
+
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    font-size:16px;
+    margin:12px 0;
+}
+
+button{
+    border:none;
+    outline:none;
+    cursor:pointer;
+    border-radius:15px;
+    padding:15px;
+    font-size:16px;
+    background:#fff;
+    color:#333;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* Top */
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.top button{
+    width:auto;
+    padding:10px 15px;
+}
+
+/* Search */
+
 .search{
     display:flex;
     align-items:center;
     gap:12px;
+    margin:25px 0;
 }
 
 .search input{
     flex:1;
+    margin:0;
     border-radius:30px;
-    padding:15px 20px;
-    border:none;
 }
 
 .search button{
     width:55px;
     height:55px;
     border-radius:50%;
-    margin:0;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:18px;
 }
 
-.search button:hover{
-    transform:scale(1.08);
+/* Icon */
+
+.icon{
+    text-align:center;
+    font-size:90px;
+    margin:25px 0;
 }
 
-#temperature{
-    font-size:75px;
-    font-weight:700;
-}
-
-#condition{
-    opacity:.9;
-    margin-top:10px;
-}
+/* Weather Cards */
 
 .details{
     display:grid;
@@ -228,35 +178,52 @@ body{
 .details div{
     background:rgba(255,255,255,.15);
     border-radius:18px;
-    padding:20px;
+    padding:18px;
+    text-align:center;
     transition:.3s;
 }
 
 .details div:hover{
-    transform:translateY(-6px);
-    background:rgba(255,255,255,.22);
+    transform:translateY(-5px);
+    background:rgba(255,255,255,.25);
 }
 
-.icon{
-    font-size:90px;
-    margin:20px 0;
+.details h2{
+    font-size:22px;
+    margin-bottom:6px;
 }
 
-button{
-    transition:.3s;
+/* Error */
+
+#loginError,
+#errorMessage{
+    color:#ffd3d3;
+    text-align:center;
+    margin-top:12px;
 }
 
-button:hover{
-    background:#f1f1f1;
+/* Desktop */
+
+@media (min-width:769px){
+
+body{
+    justify-content:center;
+    align-items:center;
+}
+
 }
 
 /* Mobile */
 
-@media(max-width:768px){
+@media (max-width:768px){
+
+body{
+    padding:15px;
+}
 
 .card{
     padding:22px;
-    border-radius:25px;
+    border-radius:22px;
 }
 
 .top{
@@ -274,20 +241,20 @@ button:hover{
 
 .search button{
     width:100%;
-    border-radius:15px;
     height:50px;
+    border-radius:15px;
 }
 
 .details{
     grid-template-columns:1fr;
 }
 
-#temperature{
-    font-size:60px;
-}
-
 .icon{
     font-size:70px;
+}
+
+#temperature{
+    font-size:58px;
 }
 
 }
